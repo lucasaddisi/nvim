@@ -1,5 +1,6 @@
 source ~/.vimrc
 
 map <leader>rc <Action>(RunClass)
+map <leader>r <Action>(Run)
 map <leader>h <Action>(HideActiveWindow)
 map <leader>vc <Action>(CheckinProject)
