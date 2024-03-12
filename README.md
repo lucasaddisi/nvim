@@ -1,3 +1,7 @@
+## Usefull tools
+- tmux
+- fzf
+
 ### Use .vimrc configuration for Vim
 
 `ln .vimrc ~/.vimrc`
