@@ -1,3 +1,7 @@
+## Required tools
+- ripgrep
+- (fd)[https://github.com/sharkdp/fd?tab=readme-ov-file#installation]
+
 ## Usefull tools
 - tmux
 - fzf
