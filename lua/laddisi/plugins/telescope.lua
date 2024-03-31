@@ -19,5 +19,7 @@ return {
 		vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 		vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 		vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+		vim.keymap.set('n', '<leader>fgb', builtin.git_branches, {})
+		vim.keymap.set('n', '<leader>fgs', builtin.git_status, {})
 	end
 }
