@@ -34,5 +34,5 @@ xnoremap <leader>p "_dP
 noremap <leader>d "_d
 vnoremap <leader>d "_d
 
-
+noremap <leader>pv :E<CR>
 
