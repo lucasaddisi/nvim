@@ -20,6 +20,7 @@ return {
 		vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 		vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 		vim.keymap.set('n', '<leader>fgb', builtin.git_branches, {})
+		vim.keymap.set('n', '<leader>fgf', builtin.git_files, {})
 		vim.keymap.set('n', '<leader>fgs', builtin.git_status, {})
 	end
 }
