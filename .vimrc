@@ -5,6 +5,14 @@ set nu
 " Set the leader key to space
 let mapleader = ","
  
+set scrolloff=10
+
+" Set indent 4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 noremap <leader>y "+y
 " noremap <leader>p "+p
 " Copy and paste the line, and increase by 1 all the digits in that line
