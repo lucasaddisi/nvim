@@ -1,3 +1,5 @@
+require("laddisi.remap")
+
 -- Get the path to the directory containing init.lua
 local script_dir = vim.fn.stdpath('config')
 
@@ -26,4 +28,3 @@ require("lazy").setup({
 	spec = "laddisi.plugins",
 	change_detection = {notofy = false}
 })
-
