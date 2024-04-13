@@ -12,7 +12,7 @@ return {
         })
         local builtin = require('telescope.builtin')
         local themes = require('telescope.themes')
-        local get_dropdown_ops = {hidden=true, ignore=true, previewer=false}
+        local get_dropdown_ops = {hidden=true, ignore=true, previewer=false, layout_config = {width=0.8}}
 
         vim.keymap.set('n', '<leader>fd', function()
             builtin.find_files(themes.get_dropdown(get_dropdown_ops))
