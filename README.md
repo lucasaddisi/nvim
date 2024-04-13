@@ -20,6 +20,8 @@ TODO: There is a better approach. Please look https://specifications.freedesktop
 
 ### To improve
 
-- [ ] Telescop + LSP
 - [ ] Java LSP Integration
+- [ ] Telescop + LSP
+- [ ] Open '{', '(', etc. should close as well
+- [ ] Positioning 
 
