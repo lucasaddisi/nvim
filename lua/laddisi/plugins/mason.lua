@@ -1,5 +1,6 @@
 return {
     "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     config = function()
         require("mason").setup({
             ui = {
@@ -9,7 +10,10 @@ return {
                     package_uninstalled = "✗"
                 }
             }
-        }) 
+        })
+        require("mason-lspconfig").setup({
+            ensure_installed = {"lua_ls"}
+        })
     end
 }
 
