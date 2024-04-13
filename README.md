@@ -16,3 +16,12 @@
 `ln .ideavimrc ~/.ideavimrc`
 
 TODO: There is a better approach. Please look https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+
+
+### To improve
+
+- [ ] Better Telescope sitter to show complete filename
+- [ ] Telescop + LSP
+- [ ] Clipboard in Linux
+- [ ] Java LSP Integration
+
