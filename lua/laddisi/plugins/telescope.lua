@@ -26,4 +26,5 @@ return {
         end, {})
         vim.keymap.set('n', '<leader>fgs', builtin.git_status, {})
     end
+    -- TODO: Find files from project git root with fallback: https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#find-files-from-project-git-root-with-fallback
 }
