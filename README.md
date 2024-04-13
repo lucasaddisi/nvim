@@ -20,8 +20,6 @@ TODO: There is a better approach. Please look https://specifications.freedesktop
 
 ### To improve
 
-- [ ] Better Telescope sitter to show complete filename
-- [ ] Mason + LSP
 - [ ] Telescop + LSP
 - [ ] Clipboard in Linux
 - [ ] Java LSP Integration
