@@ -24,4 +24,6 @@ TODO: There is a better approach. Please look https://specifications.freedesktop
 - [ ] Telescop + LSP
 - [ ] Open '{', '(', etc. should close as well
 - [ ] Telescope git status should display in a different way
+- [ ] Shortcut to close buffer from Telescope Buffers
+
 

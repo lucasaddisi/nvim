@@ -50,7 +50,7 @@ end
 
 local path = get_jdtls_paths()
 local data_dir = path.data_dir .. '/' ..  vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-print('Project specific data directory: ' .. data_dir)
+local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
 
 local cmd = {
     -- 💀
@@ -86,9 +86,10 @@ local cmd = {
 -- See https://github.com/eclipse-jdtls/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request 
 local settings = {}
 
+print('Project specific data directory: ' .. data_dir .. ' | Root dir: ' .. root_dir)
 local config = {
     cmd = cmd,
-    root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+    root_dir = root_dir,
     settings = settings
 }
 
