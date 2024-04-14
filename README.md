@@ -23,5 +23,5 @@ TODO: There is a better approach. Please look https://specifications.freedesktop
 - [ ] Java LSP Integration
 - [ ] Telescop + LSP
 - [ ] Open '{', '(', etc. should close as well
-- [ ] Positioning 
+- [ ] Telescope git status should display in a different way
 
