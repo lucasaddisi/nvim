@@ -24,11 +24,11 @@ return {
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+                vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, opts)
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-                vim.keymap.set('n', '<leader>f', function()
+                vim.keymap.set('n', '<leader>=', function()
                     vim.lsp.buf.format { async = true }
                 end, opts)
 
@@ -49,7 +49,6 @@ return {
                         callback = vim.lsp.buf.clear_references,
                     })
                 end
-
             end,
         })
 
@@ -57,9 +56,8 @@ return {
         --  By default, Neovim doesn't support everything that is in the LSP specification.
         --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
         --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers
-        -- TODO: Gonna tackle line bellow once nvim-cmp is cofigured
-        -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-        -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
         -- Configure here LSP Servers
         -- Refere to mason-lspconfig for more details on how to use this
@@ -103,12 +101,10 @@ return {
                     -- This handles overriding only values explicitly passed
                     -- by the server configuration above. Useful when disabling
                     -- certain features of an LSP (for example, turning off formatting for tsserver)
-                    -- TODO: Gonna tackle line bellow once nvim-cmp is cofigured
-                    -- server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+                    server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
                     require('lspconfig')[server_name].setup(server)
                 end,
             },
         }
     end,
 }
-
