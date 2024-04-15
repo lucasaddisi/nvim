@@ -42,7 +42,6 @@ local function get_jdtls_paths()
         vim.list_extend(path.bundles, java_test_bundle)
     end
 
-
     cache_vars.paths = path
 
     return path
