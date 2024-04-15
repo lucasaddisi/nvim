@@ -1,3 +1,8 @@
 vim.g.mapleader = ","
-vim.keymap.set('n', '<Leader>pv', vim.cmd.Ex)
+
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+
+-- Diagnostic
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 

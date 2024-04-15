@@ -21,9 +21,7 @@ TODO: There is a better approach. Please look https://specifications.freedesktop
 ### To improve
 
 - [ ] Java LSP Integration
-- [ ] Telescop + LSP
 - [ ] Open '{', '(', etc. should close as well
 - [ ] Telescope git status should display in a different way
-- [ ] Shortcut to close buffer from Telescope Buffers
 
 
