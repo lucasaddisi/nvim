@@ -22,6 +22,7 @@ TODO: There is a better approach. Please look https://specifications.freedesktop
 
 - [ ] Java LSP Integration
 - [ ] Open '{', '(', etc. should close as well
+- [ ] (Not in this project) Start terminal with tmux session `default`
 - [ ] Telescope git status should display in a different way
 
 
