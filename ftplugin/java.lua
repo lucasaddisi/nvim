@@ -86,7 +86,7 @@ local cmd = {
 -- See https://github.com/eclipse-jdtls/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request 
 local settings = {}
 
-print('Project specific data directory: ' .. data_dir .. ' | Root dir: ' .. root_dir .. ' | Workspace Folder: ' .. workspace_folder)
+-- print('Project specific data directory: ' .. data_dir .. ' | Root dir: ' .. root_dir .. ' | Workspace Folder: ' .. workspace_folder)
 local config = {
     cmd = cmd,
     root_dir = root_dir,
