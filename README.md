@@ -17,6 +17,7 @@
 
 TODO: There is a better approach. Please look https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
+
 ### Troubleshooting
 
 #### JDTLS Lombok issues
@@ -54,7 +55,11 @@ config.settings = {
     }
 }
 ```
+#### Run Java tests
 
+Clone `git@github.com:microsoft/vscode-java-test.git`
+
+Then follow steps listed in https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#vscode-java-test-installation
 
 ### To improve
 
