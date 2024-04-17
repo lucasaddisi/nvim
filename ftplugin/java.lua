@@ -25,6 +25,9 @@ local function get_jdtls_paths()
     end
 
 
+    ---
+    -- Include java-debug
+    ---
 
     local java_debug_path = require('mason-registry')
     .get_package('java-debug-adapter')
@@ -34,7 +37,9 @@ local function get_jdtls_paths()
         vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar')
     }
 
-    vim.list_extend(path.bundles, vim.split(vim.fn.glob("/home/lucas/.local/share/nvim/mason/packages/vscode-java-test/server/*.jar", 1), "\n"))
+    -- TODO: Get Mason installation directory
+    -- local mason_path = require('mason-registry').get.get_install_path()
+    vim.list_extend(path.bundles, vim.split(vim.fn.glob(mason_path .. "/vscode-java-test/server/*.jar", 1), "\n"))
 
     ---
     -- Include java-test bundle if present
@@ -60,7 +65,7 @@ local jdtls = require('jdtls')
 
 jdtls.setup_dap({hotcodereplace = 'auto'})
 -- jdtls_dap.setup_dap_main_class_configs()
--- jdtls.setup.add_commands()
+jdtls.setup.add_commands()
 
 
 local path = get_jdtls_paths()
@@ -111,7 +116,7 @@ local config = {
     cmd = cmd,
     root_dir = root_dir,
     workspaceFolders={workspace_folder},
- --   init_options = init_options,
+    init_options = init_options,
     settings = settings
 }
 
