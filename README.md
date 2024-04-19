@@ -56,11 +56,13 @@ config.settings = {
 ```
 
 
-### To improve
+### Best PDE road
 
-- [ ] Java LSP Integration
+- [ ] Java test LSP Integration
 - [ ] Open '{', '(', etc. should close as well
 - [ ] (Not in this project) Start terminal with tmux session `default`
 - [ ] Telescope git status should display in a different way
+- [ ] Generate db schema diagrama
+- [ ] Spring repository integrtion?
 
 
