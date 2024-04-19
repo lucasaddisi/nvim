@@ -8,7 +8,8 @@ return {
         local actions = require "telescope.actions"
         require('telescope').setup({
             defaults = {
-                file_ignore_patterns = { "^%.git/", "^node_modules/" }
+                file_ignore_patterns = { "^%.git/", "^node_modules/" },
+                layout_strategy = 'vertical'
             },
             pickers = {
                 buffers = {
@@ -16,7 +17,7 @@ return {
                         i = { ["<c-d>"] = actions.delete_buffer + actions.move_to_top }
                     }
                 }
-            }
+            },
         })
         local builtin = require('telescope.builtin')
         local themes = require('telescope.themes')
