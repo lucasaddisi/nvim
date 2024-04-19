@@ -9,6 +9,10 @@ local vimrc_path = script_dir .. '/.vimrc'
 -- Source the .vimrc file
 vim.cmd('source ' .. vimrc_path)
 
+-- Change colorscheme
+
+vim.cmd("colorscheme desert")
+
 -- Lazy VIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
