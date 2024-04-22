@@ -72,6 +72,7 @@ local workspace_folder = 'file://' .. root_dir
 
 vim.keymap.set("n", "<leader>rta", "<Cmd>lua require'jdtls'.test_class()<CR>", { desc = "" })
 vim.keymap.set("n", "<leader>rtc", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", { desc = "" })
+vim.keymap.set("n", "<leader>rts", "<Cmd>lua require'dap'.repl.open()<CR>", { desc = "" })
 
 local cmd = {
     -- 💀
