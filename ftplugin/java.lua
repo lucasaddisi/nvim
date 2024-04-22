@@ -24,7 +24,22 @@ local function get_jdtls_paths()
         path.platform_config = jdtls_install .. '/config_win'
     end
 
-    path.bundles = {}
+
+    ---
+    -- Include java-debug
+    ---
+
+    local java_debug_path = require('mason-registry')
+    .get_package('java-debug-adapter')
+    :get_install_path()
+
+    path.bundles = {
+        vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar')
+    }
+
+    -- TODO: Get Mason installation directory
+    local mason_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/vscode-java-test/server/"
+    vim.list_extend(path.bundles, vim.split(vim.fn.glob(mason_path .. "*.jar", 1), "\n"))
 
     ---
     -- Include java-test bundle if present
@@ -38,19 +53,25 @@ local function get_jdtls_paths()
     '\n'
     )
 
-    if java_test_bundle[1] ~= '' then
-        vim.list_extend(path.bundles, java_test_bundle)
-    end
+    vim.list_extend(path.bundles, java_test_bundle)
 
     cache_vars.paths = path
 
     return path
 end
 
+local jdtls = require('jdtls')
+
+jdtls.setup_dap({hotcodereplace = 'auto'})
+jdtls.setup.add_commands()
+
 local path = get_jdtls_paths()
 local data_dir = path.data_dir .. '/' ..  vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
 local workspace_folder = 'file://' .. root_dir
+
+vim.keymap.set("n", "<leader>rta", "<Cmd>lua require'jdtls'.test_class()<CR>", { desc = "" })
+vim.keymap.set("n", "<leader>rtc", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", { desc = "" })
 
 local cmd = {
     -- 💀
@@ -82,6 +103,13 @@ local cmd = {
     data_dir,
 }
 
+local extendedClientCapabilities = jdtls.extendedClientCapabilities;
+extendedClientCapabilities.resolveAdditionalTextEditsSupport = true;
+
+local init_options = {
+  bundles = path.bundles;
+  extendedClientCapabilities = extendedClientCapabilities;
+}
 
 -- See https://github.com/eclipse-jdtls/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request 
 local settings = {}
@@ -91,8 +119,9 @@ local config = {
     cmd = cmd,
     root_dir = root_dir,
     workspaceFolders={workspace_folder},
+    init_options = init_options,
     settings = settings
 }
 
-require('jdtls').start_or_attach(config)
+jdtls.start_or_attach(config)
 

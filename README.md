@@ -17,6 +17,7 @@
 
 TODO: There is a better approach. Please look https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
+
 ### Troubleshooting
 
 #### JDTLS Lombok issues
@@ -54,7 +55,18 @@ config.settings = {
     }
 }
 ```
+#### Run Java tests
 
+All this operations should be perfomed in Mason package directory. (Example: `$HOME/.local./share/nvim/mason/packages/`)
+
+Clone `git@github.com:microsoft/java-debug.git`
+
+Then follow steps listed in https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#java-debug-installation
+
+Clone `git@github.com:microsoft/vscode-java-test.git`
+
+Then follow steps listed in https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#vscode-java-test-installation
+Consider using latest node version 
 
 ### Best PDE road
 
