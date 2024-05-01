@@ -71,7 +71,6 @@ Consider using latest node version
 ### Best PDE road
 
 - [ ] Java test LSP Integration
-- [ ] Open '{', '(', etc. should close as well
 - [ ] Telescope git status should display in a different way
 - [ ] Generate db schema diagrama
 - [ ] Spring repository integrtion?
