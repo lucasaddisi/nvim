@@ -3,7 +3,7 @@ set rnu
 set nu
 
 " Set the leader key to space
-let mapleader = ","
+let mapleader = " "
  
 set scrolloff=10
 
