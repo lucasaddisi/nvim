@@ -27,24 +27,24 @@ return {
         vim.keymap.set('n', '<leader>fd', function()
             builtin.find_files(themes.get_dropdown(get_dropdown_ops))
         end, {})
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-        vim.keymap.set('n', '<leader>fob', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {})
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-        vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {}) -- Find grep
+        vim.keymap.set('n', '<leader>fob', builtin.buffers, {}) -- Find open buffers
+        vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {}) -- Find in buffer
+        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {}) -- Find help
+        vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}) -- Find old
 
         -- Git
         vim.keymap.set('n', '<leader>fgb', builtin.git_branches, {})
-        vim.keymap.set('n', '<leader>fgh', builtin.git_bcommits, {})
+        vim.keymap.set('n', '<leader>fgh', builtin.git_bcommits, {}) -- Find git history
         vim.keymap.set('n', '<leader>ff', function()
             builtin.git_files(themes.get_dropdown(get_dropdown_ops))
         end, {})
         vim.keymap.set('n', '<leader>fgs', builtin.git_status, {})
 
         -- LSP
-        vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-        vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {})
-        vim.keymap.set('n', '<leader>fm', function()
+        vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {}) -- Find references
+        vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {}) -- Find errors
+        vim.keymap.set('n', '<leader>fm', function() -- Find methods
             builtin.lsp_document_symbols({symbols={'function', 'class', 'method'}})
         end
         , {})
