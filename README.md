@@ -68,11 +68,3 @@ Clone `git@github.com:microsoft/vscode-java-test.git`
 Then follow steps listed in https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#vscode-java-test-installation
 Consider using latest node version 
 
-### Best PDE road
-
-- [ ] Java test LSP Integration
-- [ ] Telescope git status should display in a different way
-- [ ] Generate db schema diagrama
-- [ ] Spring repository integrtion?
-
-
