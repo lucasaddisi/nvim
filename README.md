@@ -68,3 +68,4 @@ Clone `git@github.com:microsoft/vscode-java-test.git`
 Then follow steps listed in https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#vscode-java-test-installation
 Consider using latest node version 
 
+- [ ] Make git merge more simpler
