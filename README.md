@@ -69,3 +69,4 @@ Then follow steps listed in https://github.com/mfussenegger/nvim-jdtls?tab=readm
 Consider using latest node version 
 
 - [ ] Make git merge more simpler
+- [ ] Highlight the usage of variables when cursor hovering
