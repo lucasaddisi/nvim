@@ -80,6 +80,7 @@ return {
                     },
                 },
             },
+            tsserver = {},
         }
 
         -- Mason setup
