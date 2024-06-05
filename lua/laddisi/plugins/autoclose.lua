@@ -3,4 +3,4 @@ return{
     config = function()
         require("autoclose").setup({})
     end
-} 
+}
