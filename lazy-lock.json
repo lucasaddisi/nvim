@@ -13,7 +13,7 @@
   "nvim-dap": { "branch": "master", "commit": "6f79b822997f2e8a789c6034e147d42bc6706770" },
   "nvim-jdtls": { "branch": "master", "commit": "40e8494e04c1bcd5dd6c0d0bc187d2d10965017d" },
   "nvim-lspconfig": { "branch": "master", "commit": "53a3c6444ec5006b567071614c83edc8ad651f6d" },
-  "nvim-treesitter": { "branch": "master", "commit": "e0d6c7643dc953acc2e817d0cebfc2f1f8c008e1" },
+  "nvim-treesitter": { "branch": "master", "commit": "6cd4ce6cab184e8787f164a182954534221f2af2" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
   "vim-fugitive": { "branch": "master", "commit": "d0c1a437536778bcc8174b7cb2ffdf98f611e6fe" },
