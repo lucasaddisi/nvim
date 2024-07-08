@@ -82,6 +82,7 @@ return {
             },
             tsserver = {},
             bashls = {},
+            pylsp = {},
         }
 
         -- Mason setup
