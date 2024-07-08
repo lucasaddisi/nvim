@@ -81,6 +81,7 @@ return {
                 },
             },
             tsserver = {},
+            bashls = {},
         }
 
         -- Mason setup
@@ -97,6 +98,7 @@ return {
         -- Mason lspconfig
         local masonConfig = require('mason-lspconfig')
         masonConfig.setup {
+            ensure_installed = {"lua_ls", "bashls"},
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
