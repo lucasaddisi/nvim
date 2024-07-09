@@ -83,6 +83,7 @@ return {
             tsserver = {},
             bashls = {},
             pylsp = {},
+            lemminx = {}
         }
 
         -- Mason setup
