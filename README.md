@@ -70,4 +70,5 @@ Consider using latest node version
 
 - [ ] Make git merge more simpler
 - [ ] Highlight the usage of variables when cursor hovering
+- [ ] Organize import on save in Java 
 
