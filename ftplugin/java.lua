@@ -73,8 +73,9 @@ local workspace_folder = 'file://' .. root_dir
 vim.keymap.set("n", "<leader>rta", "<Cmd>lua require'jdtls'.test_class()<CR>", { desc = "" })
 vim.keymap.set("n", "<leader>rtc", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", { desc = "" })
 vim.keymap.set("n", "<leader>rts", "<Cmd>lua require'dap'.repl.open()<CR>", { desc = "" })
+vim.keymap.set("n", "<leader>oi", "<Esc><Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = "" })
 vim.keymap.set({'n', 'v'}, "<leader>em", "<Esc><Cmd>lua require'jdtls'.extract_method(true)<CR>", { desc = "" })
-vim.keymap.set({'n', 'v'}, "<leader>ev", "<Esc><Cmd>lua require'jdtls'.extract_variable(true)<CR>", { desc = "" })
+vim.keymap.set({'n', 'v'}, "<leader>ev", "<Esc><Cmd>lua require'jdtls'.extract_variable_all(true)<CR>", { desc = "" })
 vim.keymap.set({'n', 'v'}, "<leader>ec", "<Esc><Cmd>lua require'jdtls'.extract_constant(true)<CR>", { desc = "" })
 
 local cmd = {

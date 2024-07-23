@@ -13,6 +13,9 @@ vim.cmd('source ' .. vimrc_path)
 
 vim.cmd("colorscheme desert")
 
+-- Modify updatetime (See h: updatetime)
+vim.opt.updatetime=3000
+
 -- Lazy VIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
