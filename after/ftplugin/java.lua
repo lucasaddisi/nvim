@@ -108,6 +108,9 @@ local cmd = {
     data_dir,
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local extendedClientCapabilities = jdtls.extendedClientCapabilities;
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true;
 
@@ -125,6 +128,7 @@ local config = {
     root_dir = root_dir,
     workspaceFolders={workspace_folder},
     init_options = init_options,
+    capabilities = capabilities,
     settings = settings
 }
 
