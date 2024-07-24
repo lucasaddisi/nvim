@@ -14,7 +14,12 @@ vim.cmd('source ' .. vimrc_path)
 vim.cmd("colorscheme desert")
 
 -- Modify updatetime (See h: updatetime)
-vim.opt.updatetime=3000
+vim.opt.updatetime=2000
+
+-- Highlight text on cursor hover
+vim.api.nvim_set_hl(0, 'LspReferenceText', {reverse = true})
+vim.api.nvim_set_hl(0, 'LspReferenceRead', {reverse = true})
+vim.api.nvim_set_hl(0, 'LspReferenceWrite', {reverse = true})
 
 -- Lazy VIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
