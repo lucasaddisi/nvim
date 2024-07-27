@@ -38,6 +38,7 @@ local function get_jdtls_paths()
     }
 
     -- TODO: Get Mason installation directory
+    -- FIXME: This should be updated manually. 
     local mason_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/vscode-java-test/server/"
     vim.list_extend(path.bundles, vim.split(vim.fn.glob(mason_path .. "*.jar", 1), "\n"))
 
