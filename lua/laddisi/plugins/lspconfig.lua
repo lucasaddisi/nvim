@@ -83,7 +83,9 @@ return {
             tsserver = {},
             bashls = {},
             pylsp = {},
-            apex_ls = {},
+            apex_ls = {
+                filetypes = {"apex", "apexcode"}
+            },
             lemminx = {}
         }
 

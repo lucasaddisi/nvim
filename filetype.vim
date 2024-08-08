@@ -4,5 +4,5 @@
 
 " Detect antlr4 files
 au BufRead,BufNewFile *.g4 set filetype=antlr4
-au BufRead,BufNewFile *.cls set filetype=apexcode
+au BufRead,BufNewFile *.cls set filetype=apex
 
