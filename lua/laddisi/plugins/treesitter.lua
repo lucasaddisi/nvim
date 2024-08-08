@@ -3,7 +3,7 @@ return {
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = {"lua", "vim", "vimdoc", "query", "java", "python", "markdown", "markdown_inline", "json", "bash", "xml"},
+            ensure_installed = {"apex", "lua", "vim", "vimdoc", "query", "java", "python", "markdown", "markdown_inline", "json", "bash", "xml"},
             highlight = {
                 enable = true,
                 additiona_vim_regex_highlighting = false,
