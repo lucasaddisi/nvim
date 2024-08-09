@@ -1,4 +1,5 @@
 require("laddisi.remap")
+require("laddisi.comment")
 
 -- Get the path to the directory containing init.lua
 local script_dir = vim.fn.stdpath('config')
