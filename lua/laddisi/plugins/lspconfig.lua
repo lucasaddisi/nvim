@@ -3,6 +3,7 @@ return {
     dependencies = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
+        "nvim-telescope/telescope.nvim",
 
         -- Useful status updates for LSP.
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -14,6 +15,7 @@ return {
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('UserLspConfig', {}),
             callback = function(ev)
+                local telescope = require('telescope.builtin')
                 -- Enable completion triggered by <c-x><c-o>
                 vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
@@ -27,7 +29,10 @@ return {
                 vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, opts)
                 vim.keymap.set({ 'n', 'v' }, '<leader>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-                vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+--                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                vim.keymap.set('n', 'gr', function ()
+                    telescope.lsp_references({show_line = false})
+                end, opts)
                 vim.keymap.set('n', '<leader>=', function()
                     vim.lsp.buf.format { async = true }
                 end, opts)

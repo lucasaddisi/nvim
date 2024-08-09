@@ -11,7 +11,6 @@ local vimrc_path = script_dir .. '/.vimrc'
 vim.cmd('source ' .. vimrc_path)
 
 -- Change colorscheme
-
 vim.cmd("colorscheme desert")
 
 -- Modify updatetime (See h: updatetime)

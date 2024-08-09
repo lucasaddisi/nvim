@@ -13,9 +13,12 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+" Copy and paste the line, and increase by 1 all the digits in that line
 noremap <leader>y "+y
 noremap <leader>p "+p
-" Copy and paste the line, and increase by 1 all the digits in that line
 
 noremap <leader>in Vyp:s/\d\+/\=submatch(0)+1/g<CR>  
 
