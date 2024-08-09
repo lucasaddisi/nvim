@@ -14,7 +14,7 @@ set shiftwidth=4
 set expandtab
 
 noremap <leader>y "+y
-" noremap <leader>p "+p
+noremap <leader>p "+p
 " Copy and paste the line, and increase by 1 all the digits in that line
 
 noremap <leader>in Vyp:s/\d\+/\=submatch(0)+1/g<CR>  
@@ -38,7 +38,6 @@ vnoremap <expr> K ":m '<-2<CR>gv=gv"
 vnoremap <expr> <S-Up> ":m '<-2<CR>gv=gv"
 
 " Delete but do not lose the content in buffer
-xnoremap <leader>p "_dP
 noremap <leader>d "_d
 vnoremap <leader>d "_d
 
