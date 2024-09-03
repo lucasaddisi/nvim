@@ -18,7 +18,6 @@ nnoremap <C-d> <C-d>zz
 
 " Copy and paste the line, and increase by 1 all the digits in that line
 noremap <leader>y "+y
-noremap <leader>p "+p
 
 noremap <leader>in Vyp:s/\d\+/\=submatch(0)+1/g<CR>  
 
@@ -43,4 +42,5 @@ vnoremap <expr> <S-Up> ":m '<-2<CR>gv=gv"
 " Delete but do not lose the content in buffer
 noremap <leader>d "_d
 vnoremap <leader>d "_d
+vnoremap p "_dP
 
