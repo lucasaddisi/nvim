@@ -85,7 +85,6 @@ return {
                     },
                 },
             },
-            tsserver = {},
             bashls = {},
             pylsp = {},
             apex_ls = {
