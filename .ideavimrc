@@ -3,16 +3,21 @@ source ~/.vimrc
 map <leader>rc <Action>(RunClass)
 map <leader>r <Action>(Run)
 map <leader>rd <Action>(Debug)
+
 map <leader>h <Action>(HideActiveWindow)
-map <leader>vc <Action>(CheckinProject)
 map <leader>db <Action>(ToggleLineBreakpoint)
+
 map <leader>ev <Action>(IntroduceVariable)
 map <leader>ec <Action>(IntroduceConstant)
 map <leader>em <Action>(IntroduceMethod)
 map ]d <Action>(GotoNextError)
 map [d <Action>(GotoPreviousError)
+
 map <leader>rn <Action>(RenameElement)
 map <leader>ca <Action>(ShowIntentionActions)
 map <leader>fm <Action>(FileStructurePopup)
 map <leader>fg <Action>(FindInPath)
 map <leader>ff <Action>(SearchEverywhere)
+
+map <leader>gb <Action>(Annotate)
+map <leader>gc <Action>(CheckinProject)
