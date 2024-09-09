@@ -13,7 +13,7 @@ map <leader>em <Action>(IntroduceMethod)
 map ]d <Action>(GotoNextError)
 map [d <Action>(GotoPreviousError)
 
-map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(RenameElement)
 map <leader>ca <Action>(ShowIntentionActions)
 map <leader>fm <Action>(FileStructurePopup)
 map <leader>fg <Action>(FindInPath)
