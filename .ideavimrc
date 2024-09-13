@@ -6,6 +6,8 @@ map <leader>rd <Action>(Debug)
 
 map <leader>h <Action>(HideActiveWindow)
 map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>pv <Action>(ShowActiveWindow)
+map <leader>db <Action>(ToggleLineBreakpoint)
 
 map <leader>ev <Action>(IntroduceVariable)
 map <leader>ec <Action>(IntroduceConstant)
@@ -21,3 +23,10 @@ map <leader>ff <Action>(SearchEverywhere)
 
 map <leader>gb <Action>(Annotate)
 map <leader>gc <Action>(CheckinProject)
+
+map <C-e> <Action>(ShowHarpoon)
+map <leader>a <Action>(AddToHarpoon)
+map <C-h> <Action>(GotoHarpoon1)
+map <C-j> <Action>(GotoHarpoon2)
+map <C-k> <Action>(GotoHarpoon3)
+map <C-l> <Action>(GotoHarpoon4)
