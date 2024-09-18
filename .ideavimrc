@@ -1,4 +1,5 @@
 source ~/.vimrc
+set surround
 
 map <leader>rc <Action>(RunClass)
 map <leader>r <Action>(Run)
@@ -15,7 +16,7 @@ map <leader>em <Action>(IntroduceMethod)
 map ]d <Action>(GotoNextError)
 map [d <Action>(GotoPreviousError)
 
-map <leader>rm <Action>(RenameElement)
+map <leader>rn <Action>(RenameElement)
 map <leader>ca <Action>(ShowIntentionActions)
 map <leader>fm <Action>(FileStructurePopup)
 map <leader>fg <Action>(FindInPath)
@@ -23,6 +24,7 @@ map <leader>ff <Action>(SearchEverywhere)
 
 map <leader>gb <Action>(Annotate)
 map <leader>gc <Action>(CheckinProject)
+map <leader>go <Action>(Github.Open.In.Browser)
 
 map <C-e> <Action>(ShowHarpoon)
 map <leader>a <Action>(AddToHarpoon)
