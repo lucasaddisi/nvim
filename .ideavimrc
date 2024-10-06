@@ -7,8 +7,8 @@ map <leader>rd <Action>(Debug)
 
 map <leader>h <Action>(HideActiveWindow)
 map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>ee <Action>(EvaluateExpression)
 map <leader>pv <Action>(ShowActiveWindow)
-map <leader>db <Action>(ToggleLineBreakpoint)
 
 map <leader>ev <Action>(IntroduceVariable)
 map <leader>ec <Action>(IntroduceConstant)
