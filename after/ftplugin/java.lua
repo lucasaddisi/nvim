@@ -71,14 +71,14 @@ local data_dir = path.data_dir .. '/' ..  vim.fn.fnamemodify(vim.fn.getcwd(), ':
 local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
 local workspace_folder = 'file://' .. root_dir
 
-vim.keymap.set("n", "<leader>ra", "<Cmd>lua require'jdtls'.test_class()<CR>", { desc = "" }) -- (r)un (a)ll 
-vim.keymap.set("n", "<leader>rc", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", { desc = "" }) -- (r)un (c)urrent
-vim.keymap.set("n", "<leader>rs", "<Cmd>lua require'dap'.repl.open()<CR>", { desc = "" }) -- (r)un (s)how
-vim.keymap.set("n", "<leader>gt", "<Cmd>lua require'jdtls.tests'.goto_subjects()<CR>", { desc = "" }) -- (g)o to (t)ests
-vim.keymap.set("n", "<leader>oi", "<Esc><Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = "" })
-vim.keymap.set({'n', 'v'}, "<leader>em", "<Esc><Cmd>lua require'jdtls'.extract_method(true)<CR>", { desc = "" })
-vim.keymap.set({'n', 'v'}, "<leader>ev", "<Esc><Cmd>lua require'jdtls'.extract_variable_all(true)<CR>", { desc = "" })
-vim.keymap.set({'n', 'v'}, "<leader>ec", "<Esc><Cmd>lua require'jdtls'.extract_constant(true)<CR>", { desc = "" })
+vim.keymap.set("n", "<leader>ra", jdtls.test_class) -- (r)un (a)ll 
+vim.keymap.set("n", "<leader>rc", jdtls.test_nearest_method) -- (r)un (c)urrent
+vim.keymap.set("n", "<leader>rs", require'dap'.repl.open) -- (r)un (s)how
+vim.keymap.set("n", "<leader>gt", require'jdtls.tests'.goto_subjects) -- (g)o to (t)ests
+vim.keymap.set("n", "<leader>oi", jdtls.organize_imports)
+vim.keymap.set({'n', 'v'}, "<leader>em", jdtls.extract_method)
+vim.keymap.set({'n', 'v'}, "<leader>ev", jdtls.extract_variable_all)
+vim.keymap.set({'n', 'v'}, "<leader>ec", jdtls.extract_constant)
 
 local cmd = {
     -- 💀
