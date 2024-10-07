@@ -73,7 +73,6 @@ local workspace_folder = 'file://' .. root_dir
 
 vim.keymap.set("n", "<leader>ra", jdtls.test_class) -- (r)un (a)ll 
 vim.keymap.set("n", "<leader>rc", jdtls.test_nearest_method) -- (r)un (c)urrent
-vim.keymap.set("n", "<leader>rs", require'dap'.repl.open) -- (r)un (s)how
 vim.keymap.set("n", "<leader>gt", require'jdtls.tests'.goto_subjects) -- (g)o to (t)ests
 vim.keymap.set("n", "<leader>oi", jdtls.organize_imports)
 vim.keymap.set({'n', 'v'}, "<leader>em", jdtls.extract_method)
