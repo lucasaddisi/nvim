@@ -13,12 +13,12 @@ return {
         vim.keymap.set('n', '<F9>', dap.continue)
 
         -- Configure an autocommand to attach autocomplete to REPL
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = "dap-repl",
-            callback = function()
-                require('dap.ext.autocompl').attach()
-            end
-        })
+--         vim.api.nvim_create_autocmd("FileType", {
+--             pattern = "dap-repl",
+--             callback = function()
+--                 require('dap.ext.autocompl').attach()
+--             end
+--         })
 
         dap.configurations.java = {
             {
