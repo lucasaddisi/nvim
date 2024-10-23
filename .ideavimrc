@@ -1,5 +1,6 @@
 source ~/.vimrc
 set surround
+set visualbell
 
 map <leader>rc <Action>(RunClass)
 map <leader>r <Action>(Run)
@@ -13,6 +14,7 @@ map <leader>pv <Action>(ShowActiveWindow)
 map <leader>ev <Action>(IntroduceVariable)
 map <leader>ec <Action>(IntroduceConstant)
 map <leader>em <Action>(IntroduceMethod)
+map <leader>oi <Action>(OptimizeImports)
 map ]d <Action>(GotoNextError)
 map [d <Action>(GotoPreviousError)
 
