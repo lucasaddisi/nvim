@@ -4,10 +4,6 @@
     "vim.leader": "<space>",
     "vim.normalModeKeyBindings": [
         {
-            "before": ["<leader>", "h"],
-            "commands": ["workbench.action.closeActiveEditor"]
-        },
-        {
             "before": ["<leader>", "b"],
             "commands": ["editor.debug.action.toggleBreakpoint"]
         },
@@ -24,7 +20,7 @@
             "commands": ["editor.action.organizeImports"]
         },
         {
-            "before": ["<leader>", "o", "t"],
+            "before": ["<leader>", "o", "t"], // FIXME: Not working
             "commands": ["testing.goToTest"]
         },
         {
@@ -43,6 +39,7 @@
             "before": ["<leader>", "c", "a"],
             "commands": ["editor.action.quickFix"]
         },
+        
         {
             "before": ["<leader>", "f", "m"],
             "commands": ["outline.focus"]
@@ -66,10 +63,6 @@
         {
             "before": ["<leader>", "c", "k"],
             "commands": ["aipopup.action.modal.generate"]
-        },
-        {
-            "before": ["<leader>", "c", "l"],
-            "commands": [""]
         },
         {
             "before": ["<leader>", "1"],
@@ -98,9 +91,18 @@
         {
             "before": ["<leader>", "7"],
             "commands": ["workbench.action.openEditorAtIndex7"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"]
         }
     ],
     "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "y"],
+            "commands": ["editor.action.clipboardCopyAction"],
+            "after" : ["<esc>"]
+        },
         {
             "before": ["<leader>", "e", "v"],
             "commands": ["editor.action.refactor"]
@@ -120,7 +122,13 @@
         {
             "before": ["<leader>", "c", "k"],
             "commands": ["aipopup.action.modal.generate"]
+        },
+        {
+            "before": ["<leader>", "c", "i"],
+            "commands": ["workbench.action.chat.insertCodeBlock"]
         }
-    ]
+        
+    ],
+    "editor.lineNumbers": "relative"
 }
  
