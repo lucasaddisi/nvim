@@ -1,0 +1,126 @@
+{
+    "window.commandCenter": 1,
+    "redhat.telemetry.enabled": false,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "h"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["editor.debug.action.toggleBreakpoint"]
+        },
+        {
+            "before": ["<leader>", "e", "e"],
+            "commands": ["editor.debug.action.selectionToWatch"]
+        },
+        {
+            "before": ["<leader>", "p", "v"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<leader>", "o", "i"],
+            "commands": ["editor.action.organizeImports"]
+        },
+        {
+            "before": ["<leader>", "o", "t"],
+            "commands": ["testing.goToTest"]
+        },
+        {
+            "before": ["]", "d"],
+            "commands": ["editor.action.marker.next"]
+        },
+        {
+            "before": ["[", "d"],
+            "commands": ["editor.action.marker.prev"]
+        },
+        {
+            "before": ["<leader>", "r", "n"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["<leader>", "c", "a"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["<leader>", "f", "m"],
+            "commands": ["outline.focus"]
+        },
+        {
+            "before": ["<leader>", "f", "g"],
+            "commands": ["workbench.action.findInFiles"]
+        },
+        {
+            "before": ["<leader>", "f", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "y", "p"],
+            "commands": ["copyFilePath"]
+        },
+        {
+            "before": ["<leader>", "c", "i"],
+            "commands": ["composer.startComposerPrompt"]
+        },
+        {
+            "before": ["<leader>", "c", "k"],
+            "commands": ["aipopup.action.modal.generate"]
+        },
+        {
+            "before": ["<leader>", "c", "l"],
+            "commands": [""]
+        },
+        {
+            "before": ["<leader>", "1"],
+            "commands": ["workbench.action.openEditorAtIndex1"]
+        },
+        {
+            "before": ["<leader>", "2"],
+            "commands": ["workbench.action.openEditorAtIndex2"]
+        },
+        {
+            "before": ["<leader>", "3"],
+            "commands": ["workbench.action.openEditorAtIndex3"]
+        },
+        {
+            "before": ["<leader>", "4"],
+            "commands": ["workbench.action.openEditorAtIndex4"]
+        },
+        {
+            "before": ["<leader>", "5"],
+            "commands": ["workbench.action.openEditorAtIndex5"]
+        },
+        {
+            "before": ["<leader>", "6"],
+            "commands": ["workbench.action.openEditorAtIndex6"]
+        },
+        {
+            "before": ["<leader>", "7"],
+            "commands": ["workbench.action.openEditorAtIndex7"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "e", "v"],
+            "commands": ["editor.action.refactor"]
+        },
+        {
+            "before": ["<leader>", "e", "c"],
+            "commands": ["editor.action.refactor"]
+        },
+        {
+            "before": ["<leader>", "e", "m"],
+            "commands": ["editor.action.refactor"]
+        },
+        {
+            "before": ["<leader>", "r", "n"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["<leader>", "c", "k"],
+            "commands": ["aipopup.action.modal.generate"]
+        }
+    ]
+}
+ 
