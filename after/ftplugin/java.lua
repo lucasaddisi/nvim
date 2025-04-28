@@ -67,8 +67,9 @@ jdtls.setup_dap({hotcodereplace = 'auto'})
 jdtls.setup.add_commands()
 
 local path = get_jdtls_paths()
--- TODO: We should hava a better way to reference java 21 bin
-local javaPath = os.getenv("HOME") .. '/.sdkman/candidates/java/21.0.1-sem/bin/java' -- Requires this particular version and sdkman
+-- User default java version. This approach does not require sdkman,
+-- but enforece you to have Java 21 as default.
+local javaPath = os.getenv("JAVA_HOME") .. '/bin/java'
 local data_dir = path.data_dir .. '/' ..  vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
 local workspace_folder = 'file://' .. root_dir
