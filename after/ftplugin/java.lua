@@ -8,9 +8,7 @@ local function get_jdtls_paths()
 
     local path = {}
 
-    local jdtls_install = require('mason-registry')
-    .get_package('jdtls')
-    :get_install_path()
+    local jdtls_install = os.getenv("HOME") .. '/.local/share/nvim/mason/packages/jdtls'
 
     path.java_agent = jdtls_install .. '/lombok.jar'
     path.launcher_jar = vim.fn.glob(jdtls_install .. '/plugins/org.eclipse.equinox.launcher_*.jar')
@@ -28,10 +26,7 @@ local function get_jdtls_paths()
     ---
     -- Include java-debug
     ---
-
-    local java_debug_path = require('mason-registry')
-    .get_package('java-debug-adapter')
-    :get_install_path()
+    local java_debug_path = os.getenv("HOME") .. '/.local/share/nvim/mason/packages/java-debug-adapter'
 
     path.bundles = {
         vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar')
@@ -45,9 +40,7 @@ local function get_jdtls_paths()
     ---
     -- Include java-test bundle if present
     ---
-    local java_test_path = require('mason-registry')
-    .get_package('java-test')
-    :get_install_path()
+    local java_test_path = os.getenv("HOME") .. '/.local/share/nvim/mason/packages/java-test'
 
     local java_test_bundle = vim.split(
     vim.fn.glob(java_test_path .. '/extension/server/*.jar'),
@@ -112,6 +105,8 @@ local cmd = {
     '-data',
     data_dir,
 }
+
+print(cmd)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
