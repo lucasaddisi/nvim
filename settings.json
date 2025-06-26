@@ -1,5 +1,4 @@
 {
-    "window.commandCenter": 1,
     "redhat.telemetry.enabled": false,
     "vim.leader": "<space>",
     "vim.normalModeKeyBindings": [
@@ -129,6 +128,7 @@
         }
         
     ],
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "git.autofetch": true
 }
  
