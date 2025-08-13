@@ -16,10 +16,9 @@ set expandtab
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
-" Copy and paste the line, and increase by 1 all the digits in that line
 noremap <leader>y "+y
-
-noremap <leader>in Vyp:s/\d\+/\=submatch(0)+1/g<CR>  
+" Yank current buffer path in the clipboard
+noremap <leader>yp :let @+ = expand('%:p')<CR>
 
 " Change tabs easily
 noremap <leader>1 1gt
@@ -31,7 +30,6 @@ noremap <leader>6 6gt
 noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
-
 
 " Move line while visual mode
 vnoremap <expr> J ":m '>+1<CR>gv=gv"

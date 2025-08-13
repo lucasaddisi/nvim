@@ -129,6 +129,7 @@
         
     ],
     "editor.lineNumbers": "relative",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "salesforce-internal-dx.enableMcpGateway": true
 }
  
