@@ -23,6 +23,9 @@ return {
         local themes = require('telescope.themes')
         local get_dropdown_ops = { hidden = true, ignore = true, previewer = false, layout_config = { width = 0.8 } }
 
+        -- Marks
+        vim.keymap.set('n', '<leader>m', builtin.marks, {}) -- List marks
+
         -- WD
         vim.keymap.set('n', '<leader>fd', function()
             builtin.find_files(themes.get_dropdown(get_dropdown_ops))

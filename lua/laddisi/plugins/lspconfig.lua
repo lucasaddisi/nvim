@@ -25,13 +25,15 @@ return {
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                vim.keymap.set('n', 'gi', function()
+                    telescope.lsp_implementations({ show_line = true })
+                end, opts)
                 vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, opts)
                 vim.keymap.set({ 'n', 'v' }, '<leader>rn', vim.lsp.buf.rename, opts)
                 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
---                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-                vim.keymap.set('n', 'gr', function ()
-                    telescope.lsp_references({show_line = false})
+                --                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                vim.keymap.set('n', 'gr', function()
+                    telescope.lsp_references({ show_line = false })
                 end, opts)
                 vim.keymap.set('n', '<leader>=', function()
                     vim.lsp.buf.format { async = true }
@@ -88,7 +90,7 @@ return {
             bashls = {},
             pylsp = {},
             apex_ls = {
-                filetypes = {"apex", "apexcode"}
+                filetypes = { "apex", "apexcode" }
             },
             lemminx = {}
         }
@@ -107,7 +109,7 @@ return {
         -- Mason lspconfig
         local masonConfig = require('mason-lspconfig')
         masonConfig.setup {
-            ensure_installed = {"lua_ls", "bashls"},
+            ensure_installed = { "lua_ls", "bashls" },
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
@@ -118,9 +120,8 @@ return {
                     require('lspconfig')[server_name].setup(server)
                 end,
                 -- No configuration for jdtls handled by mason-lspconfig (We are doing this in another place)
-                ["jdtls"] = function () end
+                ["jdtls"] = function() end
             },
         }
-
     end,
 }
