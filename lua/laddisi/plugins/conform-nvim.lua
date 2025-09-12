@@ -7,14 +7,18 @@ return {
                 ["markdown"] = { "prettier" },
                 ["javascript"] = { "prettier" },
                 ["javascriptreact"] = { "prettier" },
+                ["java"] = { "google-java-format" },
                 ["typescript"] = { "prettier" },
                 ["typescriptreact"] = { "prettier" },
                 ["json"] = { "prettier" },
                 ["html"] = { "prettier" },
                 ["xml"] = { "xmlformatter" }
             },
+            formatters = {
+                xmlformat = { append_args = { "--indent", "4" } },
+            },
             format_on_save = {
-                lsp_format = "prefer"
+                lsp_format = "fallback"
             },
             vim.keymap.set('n', '<leader>=', function()
                 require('conform').format()
