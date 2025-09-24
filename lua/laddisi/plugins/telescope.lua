@@ -2,7 +2,8 @@ return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = {
-        "nvim-lua/plenary.nvim"
+        "nvim-lua/plenary.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
     },
     config = function()
         local actions = require "telescope.actions"
@@ -19,6 +20,7 @@ return {
                 }
             },
         })
+        require('telescope').load_extension('fzf')
         local builtin = require('telescope.builtin')
         local themes = require('telescope.themes')
         local get_dropdown_ops = { hidden = true, ignore = true, previewer = false, layout_config = { width = 0.8 } }
@@ -30,11 +32,11 @@ return {
         vim.keymap.set('n', '<leader>fd', function()
             builtin.find_files(themes.get_dropdown(get_dropdown_ops))
         end, {})
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {}) -- Find grep
-        vim.keymap.set('n', '<leader>fob', builtin.buffers, {}) -- Find open buffers
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})                 -- Find grep
+        vim.keymap.set('n', '<leader>fob', builtin.buffers, {})                  -- Find open buffers
         vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, {}) -- Find in buffer
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {}) -- Find help
-        vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {}) -- Find old
+        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})                 -- Find help
+        vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})                  -- Find old
 
         -- Git
         vim.keymap.set('n', '<leader>fgb', builtin.git_branches, {})
@@ -46,9 +48,9 @@ return {
 
         -- LSP
         vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {}) -- Find references
-        vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {}) -- Find errors
-        vim.keymap.set('n', '<leader>fm', function() -- Find methods
-            builtin.lsp_document_symbols({symbols={'function', 'class', 'method'}})
+        vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {})    -- Find errors
+        vim.keymap.set('n', '<leader>fm', function()                  -- Find methods
+            builtin.lsp_document_symbols({ symbols = { 'function', 'class', 'method' } })
         end
         , {})
     end
