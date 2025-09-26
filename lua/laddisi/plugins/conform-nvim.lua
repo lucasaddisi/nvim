@@ -15,14 +15,15 @@ return {
                 ["xml"] = { "xmlformatter" }
             },
             formatters = {
-                xmlformat = { append_args = { "--indent", "4" } },
+                xmlformatter = { args = { "--indent", "4", "-" } },
             },
             format_on_save = {
                 lsp_format = "fallback"
             },
             vim.keymap.set('n', '<leader>=', function()
                 require('conform').format()
-            end)
+            end),
+            --log_level = vim.log.levels.DEBUG
         })
     end
 }
