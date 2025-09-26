@@ -10,12 +10,19 @@ return {
         require('telescope').setup({
             defaults = {
                 file_ignore_patterns = { "^%.git/", "^node_modules/" },
-                layout_strategy = 'vertical'
+                layout_strategy = 'vertical',
+                mappings = {
+                    i = {
+                        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                    }
+                }
             },
             pickers = {
                 buffers = {
                     mappings = {
-                        i = { ["<c-d>"] = actions.delete_buffer + actions.move_to_top }
+                        i = {
+                            ["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+                        }
                     }
                 }
             },
