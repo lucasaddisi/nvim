@@ -16,7 +16,7 @@ set expandtab
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
-noremap <leader>y "+y
+noremap <leader>yc "+y
 " Yank current buffer path in the clipboard
 noremap <leader>yp :let @+ = expand('%:p')<CR>
 
