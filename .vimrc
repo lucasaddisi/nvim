@@ -13,12 +13,12 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-nnoremap <C-u> <C-u>zz
+nnoremap <C-u> <C-cu>zz
 nnoremap <C-d> <C-d>zz
 
-noremap <leader>yc "+y
+noremap <leader>y "+y
 " Yank current buffer path in the clipboard
-noremap <leader>yp :let @+ = expand('%:p')<CR>
+noremap <leader>py :let @+ = expand('%:p')<CR>
 
 " Change tabs easily
 noremap <leader>1 1gt
