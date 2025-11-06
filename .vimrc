@@ -13,7 +13,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-nnoremap <C-u> <C-cu>zz
 nnoremap <C-d> <C-d>zz
 
 noremap <leader>y "+y
