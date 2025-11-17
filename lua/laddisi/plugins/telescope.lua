@@ -30,6 +30,7 @@ return {
         require('telescope').load_extension('fzf')
         local builtin = require('telescope.builtin')
         local themes = require('telescope.themes')
+        local telescope_utils = require('laddisi.telescope-utils')
         local get_dropdown_ops = { hidden = true, ignore = true, previewer = false, layout_config = { width = 0.8 } }
 
         -- Marks
@@ -49,7 +50,19 @@ return {
         vim.keymap.set('n', '<leader>fgb', builtin.git_branches, {})
         vim.keymap.set('n', '<leader>fgh', builtin.git_bcommits, {}) -- Find git history
         vim.keymap.set('n', '<leader>ff', function()
-            builtin.git_files(themes.get_dropdown(get_dropdown_ops))
+            -- Bazel search
+            if telescope_utils.has_bazelproject() then
+                local dirs = telescope_utils.get_bazel_directory_paths()
+                builtin.find_files(themes.get_dropdown({
+                    search_dirs = dirs,
+                    hidden = true,
+                    ignore = true,
+                    previewer = false,
+                    layout_config = { width = 0.8 }
+                }))
+            else
+                builtin.git_files(themes.get_dropdown(get_dropdown_ops))
+            end
         end, {})
         vim.keymap.set('n', '<leader>fgs', builtin.git_status, {})
 
