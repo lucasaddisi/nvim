@@ -55,6 +55,7 @@ return {
                 local dirs = telescope_utils.get_bazel_directory_paths()
                 builtin.find_files(themes.get_dropdown({
                     search_dirs = dirs,
+                    path_display = { "smart" },
                     hidden = true,
                     ignore = true,
                     previewer = false,
