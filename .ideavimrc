@@ -24,7 +24,7 @@ map <leader>ca <Action>(ShowIntentionActions)
 map <leader>fm <Action>(FileStructurePopup)
 map <leader>fg <Action>(FindInPath)
 map <leader>ff <Action>(SearchEverywhere)
-map <leader>yp <Action>(CopyPathFromRepositoryRootProvider)
+map <leader>py <Action>(CopyPathFromRepositoryRootProvider)
 
 map <leader>gb <Action>(Annotate)
 map <leader>gc <Action>(CheckinProject)
