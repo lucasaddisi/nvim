@@ -2,6 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
         "nvim-telescope/telescope.nvim",
 
         -- Useful status updates for LSP.
@@ -69,9 +70,10 @@ return {
             }
         })
 
-        -- Enable servers using Neovim's native auto-discovery
-        -- Configurations are automatically loaded from lsp/*.lua
-        -- Note: jdtls excluded - it's handled by after/ftplugin/java.lua
-        vim.lsp.enable({ 'lua_ls', 'bashls', 'ts_ls', 'apex_ls', 'pylsp', 'lemminx' })
+        require("mason-lspconfig").setup {
+            automatic_enable = true,
+            -- Automatically instals LSPs
+            ensure_installed = { "lua_ls", "lua_ls", "jdtls" },
+        }
     end,
 }
