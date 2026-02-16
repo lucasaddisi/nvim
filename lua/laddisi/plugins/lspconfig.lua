@@ -66,35 +66,8 @@ return {
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-        -- Configure here LSP Servers
-        -- Refere to mason-lspconfig for more details on how to use this
-        -- TODO: I would be aweseom to have lsp server configuration in separated files
-        local servers = {
-            lua_ls = {
-                -- cmd = {...},
-                -- filetypes = { ...},
-                -- capabilities = {},
-                settings = {
-                    Lua = {
-                        completion = {
-                            callSnippet = 'Replace',
-                        },
-                        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-                        diagnostics = {
-                            disable = { 'missing-fields' },
-                            globals = { 'vim' }
-                        },
-                    },
-                },
-            },
-            bashls = {},
-            pylsp = {},
-            apex_ls = {
-                filetypes = { "apex", "apexcode" }
-            },
-            lemminx = {},
-            ts_ls = {}
-        }
+        -- Load server configurations from separate files
+        local servers = require('laddisi.lsp.servers').load()
 
         -- Mason setup
         require('mason').setup({
