@@ -92,7 +92,8 @@ return {
             apex_ls = {
                 filetypes = { "apex", "apexcode" }
             },
-            lemminx = {}
+            lemminx = {},
+            ts_ls = {}
         }
 
         -- Mason setup
