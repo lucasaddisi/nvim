@@ -2,7 +2,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
         "nvim-telescope/telescope.nvim",
 
         -- Useful status updates for LSP.
@@ -59,17 +58,7 @@ return {
             end,
         })
 
-        -- LSP servers and clients are able to communicate to each other what features they support.
-        --  By default, Neovim doesn't support everything that is in the LSP specification.
-        --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-        --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
-        -- Load server configurations from separate files
-        local servers = require('laddisi.lsp.servers').load()
-
-        -- Mason setup
+        -- Mason setup (for installation only)
         require('mason').setup({
             ui = {
                 icons = {
@@ -80,22 +69,9 @@ return {
             }
         })
 
-        -- Mason lspconfig
-        local masonConfig = require('mason-lspconfig')
-        masonConfig.setup {
-            ensure_installed = { "lua_ls", "bashls" },
-            handlers = {
-                function(server_name)
-                    local server = servers[server_name] or {}
-                    -- This handles overriding only values explicitly passed
-                    -- by the server configuration above. Useful when disabling
-                    -- certain features of an LSP (for example, turning off formatting for tsserver)
-                    server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-                    require('lspconfig')[server_name].setup(server)
-                end,
-                -- No configuration for jdtls handled by mason-lspconfig (We are doing this in another place)
-                ["jdtls"] = function() end
-            },
-        }
+        -- Enable servers using Neovim's native auto-discovery
+        -- Configurations are automatically loaded from lsp/*.lua
+        -- Note: jdtls excluded - it's handled by after/ftplugin/java.lua
+        vim.lsp.enable({ 'lua_ls', 'bashls', 'ts_ls', 'apex_ls', 'pylsp', 'lemminx' })
     end,
 }
