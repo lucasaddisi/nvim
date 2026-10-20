@@ -16,8 +16,21 @@ set expandtab
 nnoremap <C-d> <C-d>zz
 
 noremap <leader>y "+y
-" Yank current buffer path in the clipboard
-noremap <leader>py :let @+ = expand('%:p')<CR>
+" Yank current buffer path (relative to project root) in the clipboard
+function! YankRelPath()
+  " Nearest .git wins; it is a directory in clones, a file in worktrees
+  let l:root = expand('%:p:h')
+  while l:root !=# '/' && !isdirectory(l:root . '/.git') && !filereadable(l:root . '/.git')
+    let l:root = fnamemodify(l:root, ':h')
+  endwhile
+  if l:root ==# '/'
+    let l:root = getcwd()
+  endif
+  let @+ = substitute(expand('%:p'), '^' . escape(l:root, '\.[]*~$^') . '/', '', '')
+endfunction
+noremap <leader>py :call YankRelPath()<CR>
+" Yank full path
+noremap <leader>pY :let @+ = expand('%:p')<CR>
 
 " Change tabs easily
 noremap <leader>1 1gt
